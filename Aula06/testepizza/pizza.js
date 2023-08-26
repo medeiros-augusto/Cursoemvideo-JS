@@ -1,1 +1,0 @@
-window.alert('Você está acessando a página da Pizzaria Fritz')
