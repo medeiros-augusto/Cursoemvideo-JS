@@ -18,6 +18,12 @@
     <p>Aqui vai o resultado.</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript!</p>
     <div>Clique aqui</div>
-    <script></script>
+    <script>
+        var corpo = window.document.body
+        corpo.style.background = "purple"
+        var titulo = window.document.getElementsByTagName('h1')[0]
+        titulo.style.color = "yellow"
+        corpo.innerHTML = "cucabeludo"
+    </script>
 </body>
 </html>
