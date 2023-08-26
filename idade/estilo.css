@@ -1,0 +1,51 @@
+body{
+    background-image: linear-gradient(to right, #6e00ff, #5704c9, #410596, #2b0565, #190039);
+    font: normal 15pt Arial;
+}
+
+section{
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.322);
+    margin: auto;
+
+}
+header{
+    color: white;
+    text-align: center;
+}
+footer{
+    color: white;
+    text-align: center;
+}
+#verificar{
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background: #410596;
+
+}
+
+#verificar:hover{
+    background-image: linear-gradient(to right, #6e00ff, #5704c9, #410596, #2b0565, #190039);
+    background-size: 500% 100%;
+    animation: gradientAnimation 5s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0%, 100% {
+        background-position: 0% 0;
+    }
+    25% {
+        background-position: 100% 0;
+    }
+    75% {
+        background-position: 0% 0;
+    }
+}
