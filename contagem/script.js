@@ -13,5 +13,15 @@ function contar(){
         }
         inicio = inicio + passo
     }
+
+    while (inicio >= fim){
+        conta = conta + `${inicio} ${emoji[0]} `
+        if (inicio == fim){
+            conta = conta + `${emoji[1]}`
+        }
+        inicio = inicio - passo
+    }
+
     res.innerHTML = conta
+    
 }
