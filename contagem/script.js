@@ -6,22 +6,43 @@ function contar(){
     var res = document.getElementById('res')
     var conta = ''
 
-    while (inicio <= fim){
-        conta = conta + `${inicio} ${emoji[0]} `
-        if (inicio == fim){
-            conta = conta + `${emoji[1]}`
+    if (passo == 0){
+        alert('[ ERRO ] Não é possível contar de 0 em 0. Será contado de 1 em 1')
+        passo = 1
+        while (inicio <= fim){
+            conta = conta + `${inicio} ${emoji[0]} `
+            if (inicio == fim){
+                conta = conta + `${emoji[1]}`
+            }
+            inicio = inicio + passo
         }
-        inicio = inicio + passo
-    }
-
-    while (inicio >= fim){
-        conta = conta + `${inicio} ${emoji[0]} `
-        if (inicio == fim){
-            conta = conta + `${emoji[1]}`
-        }
-        inicio = inicio - passo
-    }
-
-    res.innerHTML = conta
     
+        while (inicio >= fim){
+            conta = conta + `${inicio} ${emoji[0]} `
+            if (inicio == fim){
+                conta = conta + `${emoji[1]}`
+            }
+            inicio = inicio - passo
+        }
+    
+        res.innerHTML = conta
+    }else{
+        while (inicio <= fim){
+            conta = conta + `${inicio} ${emoji[0]} `
+            if (inicio == fim){
+                conta = conta + `${emoji[1]}`
+            }
+            inicio = inicio + passo
+        }
+    
+        while (inicio >= fim){
+            conta = conta + `${inicio} ${emoji[0]} `
+            if (inicio == fim){
+                conta = conta + `${emoji[1]}`
+            }
+            inicio = inicio - passo
+        }
+    
+        res.innerHTML = conta
+    }
 }
