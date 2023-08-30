@@ -1,48 +1,37 @@
 function contar(){
     const emoji = ["\u{1F449}","&#x1F3F4"]
-    var inicio = Number(document.getElementById('inicio').value)
-    var fim = Number(document.getElementById('fim').value)
-    var passo = Number(document.getElementById('passo').value)
+    var inicio = document.getElementById('inicio')
+    var fim = document.getElementById('fim')
+    var passo = document.getElementById('passo')
     var res = document.getElementById('res')
     var conta = ''
 
-    if (passo == 0){
-        alert('[ ERRO ] Não é possível contar de 0 em 0. Será contado de 1 em 1')
-        passo = 1
-        while (inicio <= fim){
-            conta = conta + `${inicio} ${emoji[0]} `
-            if (inicio == fim){
-                conta = conta + `${emoji[1]}`
-            }
-            inicio = inicio + passo
-        }
-    
-        while (inicio >= fim){
-            conta = conta + `${inicio} ${emoji[0]} `
-            if (inicio == fim){
-                conta = conta + `${emoji[1]}`
-            }
-            inicio = inicio - passo
-        }
-    
-        res.innerHTML = conta
+    if (passo.value.length == 0 || inicio.value.length == 0 || fim.value.length == 0){
+        alert('[ ERRO ] Digite novamente os dados!')
     }else{
-        while (inicio <= fim){
-            conta = conta + `${inicio} ${emoji[0]} `
-            if (inicio == fim){
-                conta = conta + `${emoji[1]}`
+        let vinicio = Number(inicio.value)
+        let vfim = Number(fim.value)
+        let vpasso = Number(passo.value)
+
+        if (vinicio == vfim){
+            alert("[ ERRO ] Inicio e fim são iguais!")
+        }else if (vinicio < vfim){
+            while (vinicio <= vfim){
+                conta = conta + `${vinicio} ${emoji[0]} `
+                if (vinicio == vfim){
+                    conta = conta + `${emoji[1]}`
+                }
+                vinicio = vinicio + vpasso
             }
-            inicio = inicio + passo
-        }
-    
-        while (inicio >= fim){
-            conta = conta + `${inicio} ${emoji[0]} `
-            if (inicio == fim){
-                conta = conta + `${emoji[1]}`
+        }else{
+            while (vinicio >= vfim){
+                conta = conta + `${vinicio} ${emoji[0]} `
+                if (vinicio == vfim){
+                    conta = conta + `${emoji[1]}`
+                }
+                vinicio = vinicio - vpasso
             }
-            inicio = inicio - passo
         }
-    
         res.innerHTML = conta
     }
 }
