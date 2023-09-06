@@ -33,7 +33,6 @@ function finalizar() {
     var soma = 0
     for(var i = 0; i <= 4; i++){
         frases[i] = document.createElement('p')
-        res.appendChild(frases[i])
     }
     for(var c = 0; c < arrayNum.length; c++){
         soma += arrayNum[c]
