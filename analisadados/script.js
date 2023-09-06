@@ -22,10 +22,14 @@ function enviar() {
         arrayNum.push(Number(num.value))
         res.innerHTML = ''
     }
-    console.log(arrayNum)
+    num.value = ''
+    num.focus()
 }
 function finalizar() {
-    var frases = []
+    if (arrayNum.length == 0){
+        alert("[ ERRO ] Adicione valores antes de finalizar!")
+    }else{
+        var frases = []
     var soma = 0
     for(var i = 0; i <= 4; i++){
         frases[i] = document.createElement('p')
@@ -43,5 +47,6 @@ function finalizar() {
     frases[4].innerText=`A média dos números digitados é ${media}`
     for(var i = 0; i <= 4; i++){
         res.appendChild(frases[i])
+    }
     }
 }
